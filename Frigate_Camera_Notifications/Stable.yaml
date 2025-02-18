@@ -70,6 +70,14 @@ blueprint:
         Must include the scheme i.e http:// or https://
         Examples: http://192.168.1.25:8123   https://homeassistant.mydomain.com
       default: ""
+    frigate_url:
+      name: Frigate URL (Optional)
+      description: |
+        The external URL for your Frigate Instance.
+        Used if you want to open your frigate instance outside of Home Assistant.
+        Must include the scheme i.e http:// or https://
+        Examples: http://192.168.1.25:8123   https://frigate.mydomain.com
+      default: ""
     mqtt_topic:
       name: MQTT Topic (Advanced)
       description: The MQTT topic Frigate sends review messages in.
@@ -683,6 +691,8 @@ blueprint:
                   value: /ccab4aaf_frigate-fa/dashboard
                 - label: Open Frigate (proxy)
                   value: /ccab4aaf_frigate-proxy/dashboard
+                - label: Open Frigate (external)
+                  value: "{{frigate_url}}"
                 - label: Open Reolink App (Android)
                   value: app://com.mcu.reolink
                 - label: None (Android)
@@ -721,6 +731,8 @@ blueprint:
                   value: /ccab4aaf_frigate-fa/dashboard
                 - label: Open Frigate (proxy)
                   value: /ccab4aaf_frigate-proxy/dashboard
+                - label: Open Frigate (external)
+                  value: "{{frigate_url}}"
                 - label: Open Reolink App (Android)
                   value: app://com.mcu.reolink
               custom_value: true
@@ -757,6 +769,8 @@ blueprint:
                   value: /ccab4aaf_frigate-fa/dashboard
                 - label: Open Frigate (proxy)
                   value: /ccab4aaf_frigate-proxy/dashboard
+                - label: Open Frigate (external)
+                  value: "{{frigate_url}}"
                 - label: Open Reolink App (Android)
                   value: app://com.mcu.reolink
                 - label: Custom Action (Manual Trigger)
@@ -797,6 +811,8 @@ blueprint:
                   value: /ccab4aaf_frigate-fa/dashboard
                 - label: Open Frigate (proxy)
                   value: /ccab4aaf_frigate-proxy/dashboard
+                - label: Open Frigate (external)
+                  value: "{{frigate_url}}"
                 - label: Open Reolink App (Android)
                   value: app://com.mcu.reolink
                 - label: Custom Action (Manual Trigger)
